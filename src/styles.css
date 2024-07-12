@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+header {
+    text-align: center;
+    margin-bottom: 1px;
+}
+
+body {
+    background-color: #f0f8ff;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-content p {
+    margin: 0 10px;
+}
+
+.footer-content a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
