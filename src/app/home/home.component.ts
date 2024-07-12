@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +10,7 @@ import { Component } from '@angular/core';
 export class HomeComponent {
   message: string;
 
-  constructor() {
+  constructor(private router: Router) {
     this.message = 'Bienvenido a la página de inicio!';
   }
 }
