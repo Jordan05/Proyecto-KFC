@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ConfigRoutingModule } from './config-routing.module';
 import { ConfigComponent } from './config.component';
 import { FormsModule } from '@angular/forms';
-import { PrimeNgModule } from '../pimeng/primeng.module';
-
+import { PrimeNgModule } from '../prime-ng/primeng.module';
 
 @NgModule({
   declarations: [ConfigComponent],

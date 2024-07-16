@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ReportsRoutingModule } from './reports-routing.module';
 import { ReportsComponent } from './reports.component';
 import { FormsModule } from '@angular/forms';
-import { PrimeNgModule } from '../pimeng/primeng.module';
+import { PrimeNgModule } from '../prime-ng/primeng.module';
 
 
 @NgModule({

@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
-import { PrimeNgModule } from './pimeng/primeng.module';
+import { PrimeNgModule } from './prime-ng/primeng.module';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
