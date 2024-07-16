@@ -1,0 +1,75 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.banner {
+  background-color: #333;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  height: 80px;
+}
+
+.banner .title {
+  margin: 0;
+}
+.logo{
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.user-profile {
+  padding: 10px;
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+}
+
+.user-icon {
+  width: 35px; /* Ajustar el tamaño del icono según sea necesario */
+  height: 35px; /* Ajustar el tamaño del icono según sea necesario */
+  margin-left: 5px; /* Separación entre el texto y el icono */
+  
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+}
+
+.sidebar {
+  background-color: #333;
+  width: 200px;
+  padding-top: 20px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 8px;
+  text-align: center;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+.sidebar ul li a:hover {
+  background-color: #111;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
