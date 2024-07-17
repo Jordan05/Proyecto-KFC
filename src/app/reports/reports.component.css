@@ -1,76 +1,88 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-  }
-  
-  .banner {
-    background-color: #333;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    height: 80px;
-  }
-  
-  .banner .title {
-    margin: 0;
-  }
-  .logo{
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .user-profile {
-    padding: 10px;
-    border-radius: 5px;
-    color: rgb(0, 0, 0);
-    display: flex;
-    align-items: center;
-  }
-  
-  .user-icon {
-    width: 35px; /* Ajustar el tamaño del icono según sea necesario */
-    height: 35px; /* Ajustar el tamaño del icono según sea necesario */
-    margin-left: 5px; /* Separación entre el texto y el icono */
-    
-  }
-  
-  .main-content {
-    display: flex;
-    flex: 1;
-  }
-  
-  .sidebar {
-    background-color: #333;
-    width: 200px;
-    padding-top: 20px;
-  }
-  
-  .sidebar ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .sidebar ul li {
-    padding: 8px;
-    text-align: center;
-  }
-  
-  .sidebar ul li a {
-    color: white;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .sidebar ul li a:hover {
-    background-color: #111;
-  }
-  
-  .content {
-    flex: 1;
-    padding: 20px;
-  }
-  
+.reports_container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100rem; 
+}
+
+.reports__header {
+  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  height: 5rem; 
+}
+
+.reports__header__avatar {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.reports_user_profile {
+  border-radius: 0.3rem; 
+  color: #000;
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+
+.reports_user_icon {
+  width: 2.5rem; 
+  height: 2.5rem;
+  margin-left: 0.3rem; 
+}
+
+.reports_main_content {
+  display: flex;
+  flex: 1;
+  gap: 2rem; 
+}
+
+.reports_sidebar {
+  background-color: #333;
+  flex: 0 0 12.5rem;
+}
+
+.reports_sidebar ul {
+  list-style-type: none;
+}
+
+.reports_sidebar ul li {
+  text-align: center;
+  gap: 1rem; 
+}
+
+.reports_sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+.reports_sidebar ul li a:hover {
+  background-color: #111;
+}
+
+.reports_content {
+  flex: 1;
+}
+
+.reports__footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  gap: 1rem;
+}
+
+.reports__footer p {
+  margin: 0.3rem 0; 
+}
+
+.reports__footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.reports__footer a:hover {
+  text-decoration: underline;
+}
