@@ -1,0 +1,33 @@
+header {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.header {
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem; 
+    height: 5rem; 
+  }
+  
+  .header__avatar {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .header_user_profile {
+    border-radius: 0.3rem; 
+    color: #000;
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+  }
+  
+  .header_user_icon {
+    width: 2.5rem; 
+    height: 2.5rem;
+    margin-left: 0.3rem; 
+  }

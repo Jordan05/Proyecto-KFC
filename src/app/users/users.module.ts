@@ -4,6 +4,8 @@ import { UsersRoutingModule } from './users-routing.module';
 import { UsersComponent } from './users.component';
 import { FormsModule } from '@angular/forms';
 import { PrimeNgModule } from '../prime-ng/primeng.module';
+import { HeaderModule } from '../../assets/header/header.module';
+import { SidebarModule } from '../../assets/sidebar/sidebar.module';
 
 
 @NgModule({
@@ -12,7 +14,9 @@ import { PrimeNgModule } from '../prime-ng/primeng.module';
     CommonModule,
     FormsModule,
     UsersRoutingModule,
-    PrimeNgModule
+    PrimeNgModule,
+    HeaderModule,
+    SidebarModule
   ]
 })
 export class UsersModule { }

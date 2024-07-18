@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { AppService } from './app.service';
 import { PrimeNgModule } from './prime-ng/primeng.module';
 import { RouterModule } from '@angular/router';
+import { HeaderModule } from '../assets/header/header.module';
+import { SidebarModule } from '../assets/sidebar/sidebar.module';
 
 @NgModule({
   imports: [
@@ -13,7 +15,9 @@ import { RouterModule } from '@angular/router';
     AppRoutingModule,
     FormsModule,
     PrimeNgModule, 
-    RouterModule
+    RouterModule,
+    HeaderModule,
+    SidebarModule
   ],
   declarations: [AppComponent],
   providers: [AppService],
