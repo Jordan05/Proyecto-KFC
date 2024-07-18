@@ -18,7 +18,7 @@ header {
     font-weight: bold;
   }
   
-  .header_user_profile {
+  .header__user__profile {
     border-radius: 0.3rem; 
     color: #000;
     display: flex;
@@ -26,7 +26,7 @@ header {
     background-color: #f0f0f0;
   }
   
-  .header_user_icon {
+  .header__user__icon {
     width: 2.5rem; 
     height: 2.5rem;
     margin-left: 0.3rem; 
