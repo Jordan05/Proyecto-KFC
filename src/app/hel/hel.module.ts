@@ -4,8 +4,8 @@ import { PrimeNgModule } from '../prime-ng/primeng.module';
 import { HelRoutingModule } from './hel-routing.module';
 import { HelComponent } from './hel.component';
 import { FormsModule } from '@angular/forms';
-import { HeaderModule } from '../../assets/header/header.module';
 import { SidebarModule } from '../../assets/sidebar/sidebar.module';
+import { NavbarModule } from '../../assets/header/navbar/navbar.module';
 
 
 @NgModule({
@@ -15,7 +15,7 @@ import { SidebarModule } from '../../assets/sidebar/sidebar.module';
     HelRoutingModule,
     FormsModule,
     PrimeNgModule,
-    HeaderModule,
+    NavbarModule,
     SidebarModule
   ]
 })

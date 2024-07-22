@@ -1,0 +1,22 @@
+h1 {
+    color: blue;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.hel__body {
+    flex: 1;
+    padding: 20px; 
+}
+
+.hel__container {
+    display: flex;
+}
+
+.hel__footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}

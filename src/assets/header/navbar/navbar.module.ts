@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HeaderComponent } from './header.component';
-import { PrimeNgModule } from '../../app/prime-ng/primeng.module';
+import { NavbarComponent } from './navbar.component';
+import { PrimeNgModule } from '../../../app/prime-ng/primeng.module';
 
 @NgModule({
-  declarations: [HeaderComponent],
+  declarations: [NavbarComponent],
   imports: [
     CommonModule,
     FormsModule, 
     PrimeNgModule
   ],
-  exports: [HeaderComponent]
+  exports: [NavbarComponent]
 })
-export class HeaderModule { }
+export class NavbarModule { }

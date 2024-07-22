@@ -4,9 +4,8 @@ import { ReportsRoutingModule } from './reports-routing.module';
 import { ReportsComponent } from './reports.component';
 import { FormsModule } from '@angular/forms';
 import { PrimeNgModule } from '../prime-ng/primeng.module';
-import { HeaderModule } from '../../assets/header/header.module';
+import { NavbarModule } from '../../assets/header/navbar/navbar.module';
 import { SidebarModule } from '../../assets/sidebar/sidebar.module';
-
 
 @NgModule({
   declarations: [ReportsComponent],
@@ -15,7 +14,7 @@ import { SidebarModule } from '../../assets/sidebar/sidebar.module';
     ReportsRoutingModule,
     FormsModule,
     PrimeNgModule,
-    HeaderModule,
+    NavbarModule,
     SidebarModule
   ]
 })

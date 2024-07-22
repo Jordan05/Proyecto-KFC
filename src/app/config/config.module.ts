@@ -4,8 +4,8 @@ import { ConfigRoutingModule } from './config-routing.module';
 import { ConfigComponent } from './config.component';
 import { FormsModule } from '@angular/forms';
 import { PrimeNgModule } from '../prime-ng/primeng.module';
-import { HeaderModule } from '../../assets/header/header.module';
 import { SidebarModule } from '../../assets/sidebar/sidebar.module';
+import { NavbarModule } from '../../assets/header/navbar/navbar.module';
 
 @NgModule({
   declarations: [ConfigComponent],
@@ -14,7 +14,7 @@ import { SidebarModule } from '../../assets/sidebar/sidebar.module';
     ConfigRoutingModule,
     FormsModule,
     PrimeNgModule,
-    HeaderModule,
+    NavbarModule,
     SidebarModule
   ]
 })

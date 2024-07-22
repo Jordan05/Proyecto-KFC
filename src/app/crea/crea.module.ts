@@ -4,8 +4,8 @@ import { CreaRoutingModule } from './crea-routing.module';
 import { FormsModule } from '@angular/forms';
 import { PrimeNgModule } from '../prime-ng/primeng.module';
 import { CreaComponent } from './crea.component';
-import { HeaderModule } from '../../assets/header/header.module';
 import { SidebarModule } from '../../assets/sidebar/sidebar.module';
+import { NavbarModule } from '../../assets/header/navbar/navbar.module';
 
 
 @NgModule({
@@ -16,7 +16,7 @@ import { SidebarModule } from '../../assets/sidebar/sidebar.module';
     CommonModule,
     FormsModule,
     PrimeNgModule,
-    HeaderModule,
+    NavbarModule,
     SidebarModule
   ]
 })

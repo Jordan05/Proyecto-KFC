@@ -1,0 +1,22 @@
+h1 {
+    color: blue;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.crea__body {
+    flex: 1;
+    padding: 20px; 
+}
+
+.crea__container {
+    display: flex;
+}
+
+.crea__footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}

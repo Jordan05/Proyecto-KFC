@@ -4,8 +4,8 @@ import { UsersRoutingModule } from './users-routing.module';
 import { UsersComponent } from './users.component';
 import { FormsModule } from '@angular/forms';
 import { PrimeNgModule } from '../prime-ng/primeng.module';
-import { HeaderModule } from '../../assets/header/header.module';
 import { SidebarModule } from '../../assets/sidebar/sidebar.module';
+import { NavbarModule } from '../../assets/header/navbar/navbar.module';
 
 
 @NgModule({
@@ -15,7 +15,7 @@ import { SidebarModule } from '../../assets/sidebar/sidebar.module';
     FormsModule,
     UsersRoutingModule,
     PrimeNgModule,
-    HeaderModule,
+    NavbarModule,
     SidebarModule
   ]
 })
