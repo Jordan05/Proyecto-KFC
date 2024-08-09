@@ -17,7 +17,7 @@ import { NavbarModule } from '../assets/header/navbar/navbar.module';
     PrimeNgModule, 
     RouterModule,
     NavbarModule,
-    SidebarModule
+    SidebarModule,
   ],
   declarations: [AppComponent],
   providers: [AppService],

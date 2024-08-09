@@ -3,6 +3,27 @@
 <app-sidebar></app-sidebar>
       <div class="crea__body">
         <h1>Crea un nuevo usuario </h1>
+        <p-button label="Guardar" icon="pi pi-save" class="p-button-primary"></p-button>
+        <p-table [value]="products">
+            <ng-template pTemplate="header">
+              <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Correo</th>
+                <div class="crea__button">  
+                  <p-button label="Crear" icon="pi pi-save" class="p-button-primary crear-boton"></p-button>
+                </div>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-product>
+              <tr>
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.category}}     
+                </td>
+              </tr>
+            </ng-template>
+          </p-table>
       </div>
     </div>
     <footer>

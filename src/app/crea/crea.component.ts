@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-crea',
+  selector: 'app-users',
   templateUrl: './crea.component.html',
-  styleUrl: './crea.component.css'
+  styleUrls: ['./crea.component.css']
 })
-export class CreaComponent {
+export class CreaComponent implements OnInit {
+  products: any[] = [];
 
+  ngOnInit() {
+    this.products = [
+      { name: 'Juan', price: 'Pérez', category: 'example@gmail.com' }
+    ];
+  }
 }
