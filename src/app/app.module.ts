@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { SidebarModule } from '../assets/sidebar/sidebar.module';
 import { NavbarModule } from '../assets/header/navbar/navbar.module';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { UserService } from './user-list/UserService/user.service';
 
 @NgModule({
   imports: [
@@ -21,7 +22,7 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
     SidebarModule
   ],
   declarations: [AppComponent],
-  providers: [AppService,  provideHttpClient(
+  providers: [AppService, UserService, provideHttpClient(
     withInterceptorsFromDi() // Si usas interceptores, asegúrate de incluirlos aquí
   )],
   bootstrap: []

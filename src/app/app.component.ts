@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from './user-list/UserService/user.service'; // Asegúrate de importar el servicio
 
 @Component({
   selector: 'app-root',
@@ -6,13 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  products: any[] = [];
+  users: any[] = [];
+
+  constructor(private userService: UserService) {}
 
   ngOnInit() {
-    this.products = [
-      { name: 'Producto 1', price: 100, category: 'Categoría A' },
-      { name: 'Producto 2', price: 200, category: 'Categoría B' },
-      { name: 'Producto 3', price: 300, category: 'Categoría C' }
-    ];
+    this.userService.getUsers().subscribe(
+      (data) => {
+        this.users = data;
+      },
+      (error) => {
+        console.error('Error al obtener usuarios', error);
+      }
+    );
   }
 }

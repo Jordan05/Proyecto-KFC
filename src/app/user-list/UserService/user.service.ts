@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -12,6 +12,18 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getUsers(): Observable<any> {
-    return this.http.get<any>(this.apiUrl);
+    const token = localStorage.getItem('authToken');  // O donde almacenes el token
+
+    // Verifica que el token existe
+    if (!token) {
+      console.error('No token found');
+      return new Observable();  // Puedes manejar este caso como consideres adecuado
+    }
+
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+
+    return this.http.get<any>(this.apiUrl, { headers });
   }
 }
