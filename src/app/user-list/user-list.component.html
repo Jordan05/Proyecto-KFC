@@ -1,0 +1,12 @@
+<div *ngIf="users.length > 0">
+    <h2>User List</h2>
+    <ul>
+      <li *ngFor="let user of users">
+        {{ user.name }} <!-- Ajusta 'name' según el campo de usuario que tengas en tu API -->
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="users.length === 0">
+    No users found.
+  </div>
+  

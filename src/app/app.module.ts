@@ -8,6 +8,7 @@ import { PrimeNgModule } from './prime-ng/primeng.module';
 import { RouterModule } from '@angular/router';
 import { SidebarModule } from '../assets/sidebar/sidebar.module';
 import { NavbarModule } from '../assets/header/navbar/navbar.module';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -17,10 +18,12 @@ import { NavbarModule } from '../assets/header/navbar/navbar.module';
     PrimeNgModule, 
     RouterModule,
     NavbarModule,
-    SidebarModule,
+    SidebarModule
   ],
   declarations: [AppComponent],
-  providers: [AppService],
+  providers: [AppService,  provideHttpClient(
+    withInterceptorsFromDi() // Si usas interceptores, asegúrate de incluirlos aquí
+  )],
   bootstrap: []
 })
 export class AppModule implements DoBootstrap {

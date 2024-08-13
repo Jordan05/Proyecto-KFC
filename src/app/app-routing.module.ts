@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'contact', loadChildren: () => import('./contact/contact.module').then(m=> m.ContactModule) },
   { path: 'config', loadChildren: () => import('./config/config.module').then(m => m.ConfigModule) },
   { path: 'reports', loadChildren: () => import('./reports/reports.module').then(m=> m.ReportsModule) },
+  { path: 'user-list', loadChildren: () => import('./user-list/user-list.module').then(m=> m.UserListModule) },
 ];
 
 @NgModule({
