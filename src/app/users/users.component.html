@@ -1,13 +1,13 @@
-<app-navbar></app-navbar>
+<!-- src/app/users/users.component.html -->
 <div class="users__container">
-    <app-sidebar></app-sidebar>
+    <app-navbar></app-navbar>
     <div class="users__body">
-        <h1>Usuarios</h1>
+      <h1>Lista de Usuarios Registrados</h1>
+      <ul>
+        <li *ngFor="let usuario of usuarios">
+          {{ usuario.email }}
+        </li>
+      </ul>
     </div>
-</div>
-<footer>
-    <div class="users__footer">
-        <p>&copy; 2024 Tu Empresa. Todos los derechos reservados.</p>
-        <p><a routerLink="#">Política de privacidad Términos y Condiciones</a></p>
-    </div>
-</footer>
+  </div>
+  

@@ -1,35 +1,15 @@
-<app-navbar></app-navbar>
+<!-- src/app/crea/crea.component.html -->
 <div class="crea__container">
-<app-sidebar></app-sidebar>
-      <div class="crea__body">
-        <h1>Crea un nuevo usuario </h1>
-        <p-button label="Guardar" icon="pi pi-save" class="p-button-primary"></p-button>
-        <p-table [value]="products">
-            <ng-template pTemplate="header">
-              <tr>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Correo</th>
-                <div class="crea__button">  
-                  <p-button label="Crear" icon="pi pi-save" class="p-button-primary crear-boton"></p-button>
-                </div>
-              </tr>
-            </ng-template>
-            <ng-template pTemplate="body" let-product>
-              <tr>
-                <td>{{product.name}}</td>
-                <td>{{product.price}}</td>
-                <td>{{product.category}}     
-                </td>
-              </tr>
-            </ng-template>
-          </p-table>
-      </div>
+  <app-navbar></app-navbar>
+  <div class="crea__body">
+    <h1>Gestión de Facturas</h1>
+    <form (ngSubmit)="createFactura()">
+      <input [(ngModel)]="descripcion" name="descripcion" placeholder="Descripción de la factura" required />
+      <button type="submit">Crear Factura</button>
+    </form>
+    <div *ngFor="let factura of facturas">
+      <input [(ngModel)]="factura.descripcion" (change)="updateFactura(factura.id, factura.descripcion)" />
+      <button (click)="deleteFactura(factura.id)">Eliminar</button>
     </div>
-    <footer>
-      <div class="crea__footer">
-        <p>&copy; 2024 Tu Empresa. Todos los derechos reservados.</p>
-        <p><a routerLink="#">Política de privacidad Términos y Condiciones</a></p>
-      </div>
-    </footer>
-  
+  </div>
+</div>

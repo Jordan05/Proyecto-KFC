@@ -1,22 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UsersRoutingModule } from './users-routing.module';
-import { UsersComponent } from './users.component';
 import { FormsModule } from '@angular/forms';
+import { UsersComponent } from './users.component';
 import { PrimeNgModule } from '../prime-ng/primeng.module';
-import { SidebarModule } from '../../assets/sidebar/sidebar.module';
-import { NavbarModule } from '../../assets/header/navbar/navbar.module';
-
+import { NavbarModule } from '../../assets/navbar/navbar.module'; // Asegúrate de que la ruta es correcta
+import { SidebarModule } from '../../assets/sidebar/sidebar.module'; // Asegúrate de que la ruta es correcta
 
 @NgModule({
-  declarations: [UsersComponent],
+  declarations: [
+    UsersComponent
+  ],
   imports: [
     CommonModule,
     FormsModule,
-    UsersRoutingModule,
     PrimeNgModule,
-    NavbarModule,
-    SidebarModule
+    NavbarModule,  // Importando NavbarModule para usar <app-navbar>
+    SidebarModule  // Importando SidebarModule si es necesario en UsersComponent
   ]
 })
 export class UsersModule { }

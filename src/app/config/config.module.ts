@@ -1,21 +1,20 @@
+// src/app/config/config.module.ts
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ConfigRoutingModule } from './config-routing.module';
+import { FormsModule } from '@angular/forms'; // Importa FormsModule para ngModel
 import { ConfigComponent } from './config.component';
-import { FormsModule } from '@angular/forms';
-import { PrimeNgModule } from '../prime-ng/primeng.module';
+import { NavbarModule } from '../../assets/navbar/navbar.module'; // Importa NavbarModule para app-navbar
 import { SidebarModule } from '../../assets/sidebar/sidebar.module';
-import { NavbarModule } from '../../assets/header/navbar/navbar.module';
 
 @NgModule({
-  declarations: [ConfigComponent],
+  declarations: [
+    ConfigComponent
+  ],
   imports: [
     CommonModule,
-    ConfigRoutingModule,
-    FormsModule,
-    PrimeNgModule,
-    NavbarModule,
-    SidebarModule
+    FormsModule, // Importa FormsModule para ngModel
+    NavbarModule, // Importa NavbarModule para app-navbar
+    SidebarModule // Si es necesario para los elementos de sidebar
   ]
 })
 export class ConfigModule { }

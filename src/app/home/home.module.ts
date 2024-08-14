@@ -1,23 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeRoutingModule } from './home-routing.module';
-import { HomeComponent } from './home.component';
 import { FormsModule } from '@angular/forms';
-import { PrimeNgModule } from '../prime-ng/primeng.module';
+import { HomeComponent } from './home.component';
+import { NavbarModule } from '../../assets/navbar/navbar.module';
 import { SidebarModule } from '../../assets/sidebar/sidebar.module';
-import { NavbarModule } from '../../assets/header/navbar/navbar.module';
-
 
 @NgModule({
   declarations: [HomeComponent],
-  imports: [
-    CommonModule,
-    FormsModule,
-    HomeRoutingModule,
-    PrimeNgModule,
-    SidebarModule,
-    NavbarModule
-    
-]
+  imports: [CommonModule, FormsModule, NavbarModule, SidebarModule]
 })
 export class HomeModule { }
