@@ -1,3 +1,4 @@
+// src/app/crea/crea.component.ts
 import { Component, OnInit } from '@angular/core';
 import { FacturaService } from '../services/factura.service';
 
@@ -8,7 +9,6 @@ import { FacturaService } from '../services/factura.service';
 })
 export class CreaComponent implements OnInit {
   facturas: any[] = [];
-  descripcion: string = '';
 
   constructor(private facturaService: FacturaService) {}
 
@@ -17,25 +17,15 @@ export class CreaComponent implements OnInit {
   }
 
   loadFacturas(): void {
-    this.facturaService.getAll().subscribe(data => {
-      this.facturas = data;
+    this.facturaService.getAll().subscribe(response => {
+      if (response && response.data) {
+        this.facturas = response.data;  // Asigna los datos a la variable facturas
+        console.log('Facturas cargadas:', this.facturas);  // Asegúra de que los datos se están cargando
+      } else {
+        console.error('Error al cargar las facturas');
+      }
+    }, error => {
+      console.error('Error al realizar la solicitud:', error);
     });
-  }
-
-  createFactura(): void {
-    if (this.descripcion) {
-      this.facturaService.create({ descripcion: this.descripcion }).subscribe(() => {
-        this.loadFacturas();
-        this.descripcion = '';
-      });
-    }
-  }
-
-  updateFactura(id: string, descripcion: string): void {
-    this.facturaService.update(id, { descripcion }).subscribe(() => this.loadFacturas());
-  }
-
-  deleteFactura(id: string): void {
-    this.facturaService.delete(id).subscribe(() => this.loadFacturas());
   }
 }
