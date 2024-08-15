@@ -1,20 +1,28 @@
 // src/app/services/auth.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { environment } from './../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
-  private apiUrl = `${environment.apiUrl}/auth`;  // Asegúrate de que esto apunte a tu API
+  private apiUrl = `${environment.apiUrl}/auth`;
 
   constructor(private http: HttpClient) { }
 
+  isAuthenticated(): boolean {
+    const token = localStorage.getItem('token');
+    return !!token;
+  }
+
   login(email: string, password: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/login`, { email, password });
+    return this.http.post(`${this.apiUrl}/login`, { email, password })
+      .pipe(
+        catchError(this.handleError)
+      );
   }
 
   saveToken(token: string): void {
@@ -22,6 +30,19 @@ export class AuthService {
   }
 
   register(name: string, lastName: string, email: string, password: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/register`, { name, lastName, email, password });
+    return this.http.post(`${this.apiUrl}/register`, { name, lastName, email, password })
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  logout(): void {
+    localStorage.removeItem('token');
+    // Opcionalmente, redirigir al usuario a la página de inicio de sesión
+  }
+
+  private handleError(error: any): Observable<never> {
+    console.error('An error occurred:', error);
+    return throwError(error);
   }
 }
