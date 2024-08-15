@@ -14,31 +14,30 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   isAuthenticated(): boolean {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('authToken'); // Asegúrate de usar el mismo nombre en todos los lugares
     return !!token;
   }
 
   login(email: string, password: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/login`, { email, password })
+    return this.http.post<any>(`${this.apiUrl}/login`, { email, password })
       .pipe(
         catchError(this.handleError)
       );
   }
 
   saveToken(token: string): void {
-    localStorage.setItem('token', token);
+    localStorage.setItem('authToken', token);
   }
 
   register(name: string, lastName: string, email: string, password: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/register`, { name, lastName, email, password })
+    return this.http.post<any>(`${this.apiUrl}/register`, { name, lastName, email, password })
       .pipe(
         catchError(this.handleError)
       );
   }
 
   logout(): void {
-    localStorage.removeItem('token');
-    // Opcionalmente, redirigir al usuario a la página de inicio de sesión
+    localStorage.removeItem('authToken'); // Asegúrate de usar el mismo nombre en todos los lugares
   }
 
   private handleError(error: any): Observable<never> {

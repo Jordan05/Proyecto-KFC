@@ -1,7 +1,6 @@
-// src/app/login/login.component.ts
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../services/auth.service'; // Actualiza la ruta si es necesario
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -15,11 +14,17 @@ export class LoginComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
   onLogin(): void {
-    this.authService.login(this.email, this.password).subscribe(response => {
-      if (response && response.data && response.data.token) {
-        localStorage.setItem('authToken', response.data.token);
-        this.router.navigate(['/home']);  // Redirige a la página principal después de iniciar sesión
-      } else {
+    this.authService.login(this.email, this.password).subscribe({
+      next: response => {
+        if (response && response.token) {
+          this.authService.saveToken(response.token); // Guarda el token usando el nombre correcto
+          this.router.navigate(['/home']);  // Redirige a la página principal después de iniciar sesión
+        } else {
+          alert('Error al iniciar sesión');
+        }
+      },
+      error: err => {
+        console.error('Error de inicio de sesión', err);
         alert('Error al iniciar sesión');
       }
     });
