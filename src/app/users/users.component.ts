@@ -16,8 +16,15 @@ export class UsersComponent implements OnInit {
   }
 
   loadUsuarios(): void {
-    this.usuarioService.getAll().subscribe(data => {
-      this.usuarios = data;
+    this.usuarioService.getAll().subscribe(response => {
+      if (response && response.data) {
+        this.usuarios = response.data;  // Asigna los datos a la variable facturas
+        console.log('Usuarios cargados:', this.usuarios);  // Asegúra de que los datos se están cargando
+      } else {
+        console.error('Error al cargar las usuarios');
+      }
+    }, error => {
+      console.error('Error al realizar la solicitud:', error);
     });
   }
 }

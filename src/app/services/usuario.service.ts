@@ -12,14 +12,12 @@ export class UsuarioService {
 
   constructor(private http: HttpClient) {}
 
-  private getAuthHeaders(): HttpHeaders {
-    const token = localStorage.getItem('token'); // o sessionStorage.getItem('token')
-    return new HttpHeaders({
+  getAll(): Observable<any> {
+    const token = localStorage.getItem('authToken'); // Asegúrate de que el token esté en el localStorage
+    const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });
-  }
 
-  getAll(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl, { headers: this.getAuthHeaders() });
+    return this.http.get<any>(this.apiUrl, { headers });
   }
 }
