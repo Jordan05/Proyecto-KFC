@@ -24,3 +24,8 @@ h1 {
 .crea__button{
     margin-left: 10px;
 }
+ul li {
+    background: rgb(248, 248, 248);
+    color: rgb(3, 3, 3);
+    margin: 5px;
+  }

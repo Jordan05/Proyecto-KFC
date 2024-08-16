@@ -11,6 +11,12 @@ import { AuthService } from '../services/auth.service'; // Actualiza la ruta si 
 export class LoginComponent {
   email: string = '';
   password: string = '';
+  showPassword: boolean = false;
+
+  
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
+  }
 
   constructor(private authService: AuthService, private router: Router) {}
 

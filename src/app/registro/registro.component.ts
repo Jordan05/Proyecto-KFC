@@ -14,8 +14,18 @@ export class RegistroComponent {
   email: string = '';
   password: string = '';
   confirmPassword: string = '';
+  showPassword: boolean = false;
+  showConfirmPassword: boolean = false;
 
   constructor(private authService: AuthService, private router: Router) {}
+
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
+  }
+
+  toggleConfirmPasswordVisibility() {
+    this.showConfirmPassword = !this.showConfirmPassword;
+  }
 
   onRegister(): void {
     if (this.password !== this.confirmPassword) {

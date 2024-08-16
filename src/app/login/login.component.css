@@ -1,32 +1,80 @@
 /* src/app/login/login.component.css */
 .login-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  label {
-    color: green;
-  }
-  
-  input {
-    background-color: white;
-  }
-  
-  button {
-    background-color: blue;
-    color: white;
-  }
-  
-  a {
-    color: blue;
-    cursor: pointer;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.form-container {
+  border: 1px solid #ccc;
+  border-radius: 0.3rem;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Centrar el texto dentro del formulario */
+}
+
+h2 {
+  margin-bottom: 1rem;
+  color: #333; /* Ajusta el color del título según tu preferencia */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px; /* Ajusta el ancho del formulario */
+}
+
+label {
+  color: rgb(7, 7, 7);
+  margin-bottom: 0.5rem;
+}
+
+input {
+  background-color: white;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.3rem;
+}
+
+.password-container {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.password-container .password-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: #aaa;
+}
+
+.password-container .lock-icon {
+  left: 0.5rem;
+}
+
+.password-container .eye-icon {
+  right: 0.5rem;
+  cursor: pointer;
+}
+
+button {
+  background-color: blue;
+  color: white;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+a {
+  color: blue;
+  cursor: pointer;
+  margin-top: 1rem;
+  text-align: center;
+  text-decoration: none;
+}
