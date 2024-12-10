@@ -1,30 +1,9 @@
-<div class="container">
-    <header>
-      <div class="banner">
-        <div class="logo">Logo</div>
-        <button class="user-profile">Perfil de usuario<img src="https://cdn-icons-png.flaticon.com/512/6542/6542954.png" alt="Icono de usuario" class="user-icon"></button>
-      </div>
-    </header>
-    <div class="main-content">
-      <nav class="sidebar">
-        <ul>
-            <li><a class="button create" routerLink="/home">Home</a></li>
-          <li><a class="button users" routerLink="/users">Usuarios</a></li>
-          <li><a class="button reports" routerLink="/reports">Reportes</a></li>
-          <li><a class="button setting" routerLink="/config">Configuración</a></li>
-          <li><a class="button help" routerLink="/hel">Ayuda</a></li>
-          <li><a class="button contact" routerLink="/contact">Contacto</a></li>
-        </ul>
-      </nav>
-      <div class="content">
-        <h1>Crea nuevos Usuarios</h1>
-      </div>
-    </div>
-    <footer>
-      <div class="footer-content">
-        <p>&copy; 2024 Tu Empresa. Todos los derechos reservados.</p>
-        <p><a routerLink="#">Política de privacidad Términos y Condiciones</a></p>
-      </div>
-    </footer>
-  </div>
-  
+<div>
+  <app-navbar></app-navbar>
+  <h1>Lista de Facturas</h1>
+  <ul>
+    <li *ngFor="let factura of facturas">
+      {{ factura.descripcion }}
+    </li>
+  </ul>
+</div>

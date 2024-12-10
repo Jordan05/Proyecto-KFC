@@ -1,0 +1,54 @@
+<!-- src/app/registro/registro.component.html -->
+<div class="registro-container">
+  <app-navbar></app-navbar>
+  <div class="form-container">
+    <h2>Regístrate Aquí</h2>
+    <form (ngSubmit)="onRegister()">
+      <label for="name">Nombre</label>
+      <input type="text" id="name" [(ngModel)]="name" name="name" required>
+
+      <label for="lastName">Apellido</label>
+      <input type="text" id="lastName" [(ngModel)]="lastName" name="lastName" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" [(ngModel)]="email" name="email" required>
+
+      <label for="password">Contraseña</label>
+      <div class="password-container">
+        <input
+          type="password"
+          id="password"
+          [(ngModel)]="password"
+          name="password"
+          placeholder="Introduce tu contraseña"
+          [type]="showPassword ? 'text' : 'password'"
+          required
+        />
+        <i class="password-icon lock-icon">🔒</i>
+        <i class="password-icon eye-icon" (click)="togglePasswordVisibility()">
+          {{ showPassword ? '🙈' : '👁️' }}
+        </i>
+      </div>
+
+      <label for="confirmPassword">Confirmar contraseña</label>
+      <div class="password-container">
+        <input
+          type="password"
+          id="confirmPassword"
+          [(ngModel)]="confirmPassword"
+          name="confirmPassword"
+          placeholder="Confirma tu contraseña"
+          [type]="showConfirmPassword ? 'text' : 'password'"
+          required
+        />
+        <i class="password-icon lock-icon">🔒</i>
+        <i class="password-icon eye-icon" (click)="toggleConfirmPasswordVisibility()">
+          {{ showConfirmPassword ? '🙈' : '👁️' }}
+        </i>
+      </div>
+
+      <button type="submit">Registrar</button>
+    </form>
+    <a (click)="goToLogin()">¿Ya tienes cuenta? Inicia sesión</a>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<!-- src/app/login/login.component.html -->
+<div class="login-container">
+  <app-navbar></app-navbar>
+  <div class="form-container">
+    <h2>Inicio de Sesión</h2> 
+    <form (ngSubmit)="onLogin()">
+      <label for="email">Email</label>
+      <input type="email" id="email" [(ngModel)]="email" name="email" required>
+
+      <label for="password">Contraseña</label>
+      <div class="password-container">
+        <input
+          type="password"
+          id="password"
+          [(ngModel)]="password"
+          name="password"
+          placeholder="Introduce tu contraseña"
+          [type]="showPassword ? 'text' : 'password'"
+          required
+        />
+        <i class="password-icon lock-icon">🔒</i>
+        <i class="password-icon eye-icon" (click)="togglePasswordVisibility()">
+          {{ showPassword ? '🙈' : '👁️' }}
+        </i>
+      </div>
+
+      <button type="submit">Inicio de sesión</button>
+    </form>
+    <a (click)="goToRegister()">¿No tienes cuenta? Regístrate</a>
+  </div>
+</div>
